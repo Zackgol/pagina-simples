@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CosmoX - Explore o Universo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+body{
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+position:sticky;
+top:0;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.05);
+}
+
+nav h1{
+font-weight:600;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+opacity:.8;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+padding:20px;
+}
+
+.hero h2{
+font-size:3rem;
+margin-bottom:20px;
+background:linear-gradient(90deg,#00d2ff,#3a7bd5);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+max-width:600px;
+opacity:.8;
+margin-bottom:30px;
+}
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#00d2ff,#3a7bd5);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* CARDS */
+
+.section{
+padding:80px 10%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+padding:30px;
+backdrop-filter:blur(10px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.12);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.7;
+}
+
+/* ANIMAÇÃO ESTRELAS */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+opacity:.8;
+animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<nav>
+<h1>CosmoX</h1>
+<ul>
+<li><a href="#">Início</a></li>
+<li><a href="#">Missões</a></li>
+<li><a href="#">Tecnologia</a></li>
+<li><a href="#">Contato</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h2>Explore o Universo</h2>
+<p>
+Descubra novas galáxias, tecnologias espaciais e o futuro da exploração humana
+além da Terra.
+</p>
+<button onclick="alert('Preparando para lançamento 🚀')">
+Começar jornada
+</button>
+</section>
+
+<section class="section">
+<h2 style="text-align:center;">Missões Futuras</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌙 Base Lunar</h3>
+<p>Construção da primeira colônia humana permanente na Lua.</p>
+</div>
+
+<div class="card">
+<h3>🔴 Marte</h3>
+<p>Exploração e possível colonização do planeta vermelho.</p>
+</div>
+
+<div class="card">
+<h3>🛰️ Novos Satélites</h3>
+<p>Tecnologia avançada para comunicação e observação espacial.</p>
+</div>
+
+<div class="card">
+<h3>🌌 Exploração Profunda</h3>
+<p>Missões para estudar galáxias distantes e buracos negros.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 CosmoX — Explorando o infinito
+</footer>
+
+<script>
+
+/* GERAR ESTRELAS */
+
+const starsContainer = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+const star=document.createElement("div");
+star.classList.add("star");
+
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+
+star.style.animationDuration=(Math.random()*3+2)+"s";
+
+starsContainer.appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
